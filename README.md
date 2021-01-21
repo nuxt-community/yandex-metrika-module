@@ -71,7 +71,7 @@ In Nuxt 2.13+, you can also use public runtime config:
 ## Options
 
 For more information:
-- [Documetation for Ya.Metrika](https://yandex.com/support/metrica/code/counter-initialize.html)
+- [Documentation for Ya.Metrika](https://yandex.com/support/metrica/code/counter-initialize.html)
 - [hit method](https://yandex.com/support/metrica/objects/hit.html)
 
 ### `id`
@@ -88,7 +88,7 @@ Public runtime config key. Set to `false` to disable runtime configuration.
 
 - Default: false
 
-Load metrika script from <https://cdn.jsdelivr.net/npm/yandex-metrica-watch/watch.js>.
+Load metrika script from <https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js>.
 
 This option can not be provided via runtime config.
 

@@ -15,7 +15,6 @@ export default ({ app: { router }, $config }) => {
   })
 
   function create() {
-
     if (!ready) {
       // Don't record a duplicate hit for the initial navigation.
       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -36,5 +35,4 @@ export default ({ app: { router }, $config }) => {
   if (window.ym === undefined) {
     create()
   }
-
 }
