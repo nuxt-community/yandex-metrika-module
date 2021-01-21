@@ -11,7 +11,8 @@
   "scripts": {
     "build": "siroc build && mkdist --src src/runtime --dist dist/runtime",
     "format": "yarn lint --fix",
-    "lint": "eslint --ext .js,.ts,.vue ."
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "test": "yarn lint && jest"
   },
   "dependencies": {
     "defu": "^3.2.2"
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
+    "@nuxt/test-utils": "^0.1.2",
     "@nuxt/types": "^2.14.12",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
     "eslint": "^7.18.0",

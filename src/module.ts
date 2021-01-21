@@ -1,6 +1,6 @@
+import { resolve, join } from 'path'
 import defu from 'defu'
 import { ModuleOptions, moduleDefaults } from './options'
-const path = require('path')
 
 // https://github.com/RabotaRu/yandex-metrika
 
@@ -13,6 +13,7 @@ function yandexMetrikaModule (moduleOptions) {
   }
 
   // Runtime config
+  /* istanbul ignore next */
   const useRuntimeConfig = nuxt.options.publicRuntimeConfig ? 'yandexMetrika' : undefined
 
   // Merge all option sources
@@ -40,7 +41,8 @@ function yandexMetrikaModule (moduleOptions) {
 
   // Register plugin
   addPlugin({
-    src: path.resolve(__dirname, 'plugin.js'),
+    src: resolve(__dirname, 'runtime/plugin.js'),
+    fileName: join('yandexMetrika.js'),
     ssr: false,
     options
   })
