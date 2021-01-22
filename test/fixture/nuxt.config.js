@@ -7,7 +7,7 @@ module.exports = {
   },
   modules: [yandexMetrika],
   yandexMetrika: {
-    id: 'XXXXXX', // Specify your Yandex Metrika ID
+    id: 'XXXXXX' // Specify your Yandex Metrika ID
     // Additional options
   }
 }

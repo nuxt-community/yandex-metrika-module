@@ -33,7 +33,7 @@ function yandexMetrikaModule (moduleOptions) {
   nuxt.options.head.link.push({
     href: metrikaUrl,
     rel: 'preload',
-    as: 'script',
+    as: 'script'
   })
 
   // Register plugin

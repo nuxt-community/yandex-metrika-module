@@ -3,18 +3,18 @@ export interface ModuleOptions {
   useRuntimeConfig: string
   useCDN: boolean
   metrikaUrl?: string
-  accurateTrackBounce: boolean
+  accurateTrackBounce: boolean|number
   childIframe: boolean
   clickmap: boolean
   defer: boolean
-  ecommerce: boolean
-  params: boolean
-  userParams: boolean
+  ecommerce: boolean|string|Array<any>
+  params: Object|Array<any>
+  userParams: Object
   trackHash: boolean
   trackLinks: boolean
-  trustedDomains: boolean
-  type: boolean
-  ut: boolean
+  trustedDomains: Array<any>
+  type: number
+  ut: string
   webvisor: boolean
   triggerEvent: boolean
 }
@@ -32,9 +32,9 @@ export const moduleDefaults: ModuleOptions = {
   userParams: false,
   trackHash: false,
   trackLinks: false,
-  trustedDomains: false,
-  type: false,
-  ut: false,
+  trustedDomains: [],
+  type: 0,
+  ut: '',
   webvisor: false,
   triggerEvent: false
 }
