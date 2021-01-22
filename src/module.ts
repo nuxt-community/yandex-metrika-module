@@ -29,15 +29,12 @@ function yandexMetrikaModule (moduleOptions) {
 
   options.metrikaUrl = metrikaUrl
 
-  // Add script preload in head section
-  if (!options.disablePreload) {
-    nuxt.options.head.link.push({
-      href: metrikaUrl,
-      rel: 'preload',
-      as: 'script',
-      crossorigin: 'use-credentials'
-    })
-  }
+  // Add script as preload in head section
+  nuxt.options.head.link.push({
+    href: metrikaUrl,
+    rel: 'preload',
+    as: 'script',
+  })
 
   // Register plugin
   addPlugin({

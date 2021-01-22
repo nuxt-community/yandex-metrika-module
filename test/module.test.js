@@ -41,17 +41,6 @@ describe('runtime configuration', () => {
   })
 })
 
-describe('disable preload configuration', () => {
-  setupTest({
-    config: {
-      yandexMetrika: {
-        id: '123456',
-        disablePreload: true
-      }
-    }
-  })
-})
-
 describe('use cdn configuration', () => {
   setupTest({
     config: {

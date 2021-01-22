@@ -16,7 +16,6 @@ export interface ModuleOptions {
   type: boolean
   ut: boolean
   webvisor: boolean
-  disablePreload: boolean
   triggerEvent: boolean
 }
 
@@ -37,6 +36,5 @@ export const moduleDefaults: ModuleOptions = {
   type: false,
   ut: false,
   webvisor: false,
-  triggerEvent: false,
-  disablePreload: false
+  triggerEvent: false
 }
