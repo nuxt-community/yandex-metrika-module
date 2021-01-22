@@ -106,3 +106,19 @@ This option can not be provided via runtime config.
 ### `ut`
 ### `webvisor`
 ### `triggerEvent`
+
+
+# Development
+
+Running demo for development :
+
+```bash
+$ yarn install
+$ yarn dev
+```
+
+⚠️ Keep in mind that this module is used only for production mode.
+
+## License
+
+[MIT License](./LICENSE) - Copyright (c) Nuxt Community

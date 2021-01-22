@@ -42,7 +42,7 @@ function yandexMetrikaModule (moduleOptions) {
   // Register plugin
   addPlugin({
     src: resolve(__dirname, 'runtime/plugin.js'),
-    fileName: join('yandexMetrika.js'),
+    fileName: join('yandex-metrika.js'),
     ssr: false,
     options
   })

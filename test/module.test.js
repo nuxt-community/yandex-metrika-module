@@ -24,7 +24,7 @@ describe('default configuration', () => {
 
   test('should inject plugin', () => {
     expectModuleToBeCalledWith('addPlugin', expect.objectContaining({
-      fileName: 'yandexMetrika.js'
+      fileName: 'yandex-metrika.js'
     }))
   })
 })

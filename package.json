@@ -9,6 +9,7 @@
     "dist"
   ],
   "scripts": {
+    "dev": "NODE_ENV=production nuxt build test/fixture && nuxt start test/fixture",
     "build": "siroc build && mkdist --src src/runtime --dist dist/runtime",
     "format": "yarn lint --fix",
     "lint": "eslint --ext .js,.ts,.vue .",
