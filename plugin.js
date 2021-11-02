@@ -1,6 +1,7 @@
+import qs from 'qs'
 export default ({ app: { router }, $config }) => {
 
-  const { useRuntimeConfig, metrikaUrl, ...options } = <%= JSON.stringify(options) %>
+  const { useRuntimeConfig, metrikaUrl, ...options } = <%= serialize(options) %>
   if ($config && useRuntimeConfig) {
     Object.assign(options, $config[useRuntimeConfig])
   }
@@ -14,6 +15,22 @@ export default ({ app: { router }, $config }) => {
     ready = true
   })
 
+  function getPathWithoutQueryByFilter (route, filter) {
+    if (!Array.isArray(filter)) return
+    if (!filter.length) return
+
+    const { query } = route
+    let path
+
+    filter.forEach(v => delete query[v])
+    
+    path = new URLSearchParams(query).toString().length
+      ? `/?${new URLSearchParams(query).toString()}`
+      : '/'
+
+    return path
+  }
+
   function create() {
 
     if (!ready) {
@@ -25,8 +42,11 @@ export default ({ app: { router }, $config }) => {
       ym(id, "init", metrikaOptions)
     }
     router.afterEach((to, from) => {
-      ym(id, 'hit', basePath + to.fullPath, {
-        referer: basePath + from.fullPath
+    const toFullPathWithoutQuery = getPathWithoutQueryByFilter(to, metrikaOptions.queryFiler)
+    const fromFullPathWithoutQuery = getPathWithoutQueryByFilter(from, metrikaOptions.queryFiler)
+  
+      ym(id, 'hit', basePath + toFullPathWithoutQuery ? toFullPathWithoutQuery : to.fullPath, {
+        referer: basePath + fromFullPathWithoutQuery ? fromFullPathWithoutQuery : from.fullPath
         // TODO: pass title: <new page title>
         // This will need special handling because router.afterEach is called *before* DOM is updated.
       })
