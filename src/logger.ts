@@ -1,2 +1,2 @@
-import consola from 'consola'
-export default consola.withScope('nuxt:yandex-metrika')
+import { useLogger } from '@nuxt/kit'
+export default useLogger('nuxt:yandex-metrika')
