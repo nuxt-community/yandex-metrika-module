@@ -1,7 +1,32 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 1.4.0 (2022-02-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **yandex-metrika:** Using new tag.js script
+
+### Features
+
+* **yandex-metrika:** add support use cdn ([#194](https://github.com/nuxt/modules/issues/194)) ([749c249](https://github.com/nuxt/modules/commit/749c249f927fc97e0d6e79c2d0409f0dd255b45e))
+* **yandex-metrika:** replace deprecated `watch.js` with new `tag.js` ([#313](https://github.com/nuxt/modules/issues/313)) ([c37814d](https://github.com/nuxt/modules/commit/c37814df45509c813199f22052022b2d1d63fe7e))
+* **yandex-metrika:** support `yandexMetrika` option ([#375](https://github.com/nuxt/modules/issues/375)) ([1d6c851](https://github.com/nuxt/modules/commit/1d6c8516fb3dd6643b340928c1e63ef6fb35dffb))
+* **yandex-metrika:** support runtime config ([#384](https://github.com/nuxt/modules/issues/384)) ([d8913e6](https://github.com/nuxt/modules/commit/d8913e6e873a59807761be690a722ea0d6e34a9d))
+* **yandex-metrika:** update loading script ([#371](https://github.com/nuxt/modules/issues/371)) ([f138add](https://github.com/nuxt/modules/commit/f138add7e81aa69571a93f4bd217a46d79d31ffc))
+* **yandex-metrika:** use new version of yandex metrics code ([#363](https://github.com/nuxt/modules/issues/363)) ([b6785d9](https://github.com/nuxt/modules/commit/b6785d95cb5ca4f1b57d896022fb6474a5bbb6d9))
+
+
+### Bug Fixes
+
+* correct homepage URLs ([#282](https://github.com/nuxt/modules/issues/282)) ([7c2f965](https://github.com/nuxt/modules/commit/7c2f9659ba283ab01a74362701482cabadb6a5c9))
+* html validate error ([#253](https://github.com/nuxt/modules/issues/253)) ([bca2d70](https://github.com/nuxt/modules/commit/bca2d70635dd87f9fffa0c9074538ecf31701ce8))
+* **yandex-metrika:** constructor name for `tag.js` ([#318](https://github.com/nuxt/modules/issues/318)) ([c8277a8](https://github.com/nuxt/modules/commit/c8277a8cb3251cec975ea93b2d328d2eeef21f9e))
+* **yandex-metrika:** correct class existence check ([#319](https://github.com/nuxt/modules/issues/319)) ([2ef472d](https://github.com/nuxt/modules/commit/2ef472db3a662289104cb5a18e7e610b4e300509))
+* **yandex-metrika:** preload and async ([#325](https://github.com/nuxt/modules/issues/325)) ([b442460](https://github.com/nuxt/modules/commit/b442460e59eb4004a560766cb7bb472924ae260c))
+* **yandex-metrika:** prepend router base to paths ([#386](https://github.com/nuxt/modules/issues/386)) ([df421a5](https://github.com/nuxt/modules/commit/df421a5e3b0795a13b27865c3725d9248408eb8f))
 
 # [1.3.0](https://github.com/nuxt/modules/compare/@nuxtjs/yandex-metrika@1.2.0...@nuxtjs/yandex-metrika@1.3.0) (2020-08-27)
 

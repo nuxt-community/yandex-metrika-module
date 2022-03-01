@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "config:base",
+    "packages:linters",
+    ":labels(dependencies,devops)",
+    ":maintainLockFilesWeekly",
+    ":enableVulnerabilityAlerts",
+    ":automergeLinters",
+    ":automergeTypes",
+    ":semanticCommitTypeAll(chore)",
+    ":automergePatch"
+  ],
+  "rebaseStalePrs": true,
+  "prCreation": "not-pending",
+  "rangeStrategy": "bump",
+  "npm": {
+    "commitMessageTopic": "{{prettyDepType}} {{depName}}"
+  },
+  "packageRules": [
+    {
+      "packagePatterns": ["lint"],
+      "groupName": "all lint dependencies",
+      "groupSlug": "all-lint"
+    }
+  ]
+}
