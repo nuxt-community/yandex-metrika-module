@@ -5,10 +5,6 @@
 </template>
 
 <script setup>
-defineNuxtComponent({
-  name: 'TheIndex'
-})
-
 definePageMeta({
   title: 'Startpage'
 })
