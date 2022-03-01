@@ -751,7 +751,6 @@ __metadata:
     "@nuxtjs/eslint-config-typescript": latest
     "@release-it/conventional-changelog": ^4.2.0
     "@types/node": latest
-    consola: ^2.15.3
     eslint: latest
     nuxt3: latest
     release-it: ^14.12.5

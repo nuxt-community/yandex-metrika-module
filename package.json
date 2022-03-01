@@ -37,8 +37,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
-    "consola": "^2.15.3"
+    "@nuxt/kit": "npm:@nuxt/kit-edge@latest"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
