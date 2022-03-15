@@ -1,8 +1,9 @@
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 import { isVue2, useRouter } from '#imports'
+import options from '#build/yandex-metrika.options.mjs'
 
-export default defineNuxtPlugin(({ _ }) => {
-  const { id, metrikaUrl, ...metrikaOptions } = useRuntimeConfig().yandexMetrika
+export default defineNuxtPlugin(async ({ _ }) => {
+  const { id, metrikaUrl, ...metrikaOptions } = await options()
 
   let ready = false
   const basePath = useRuntimeConfig().app.basePath
