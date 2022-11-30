@@ -1,8 +1,7 @@
-import { resolve } from 'path'
 import { fileURLToPath } from 'url'
+import { resolve } from 'pathe'
 import { defineNuxtModule, addPlugin, addTemplate, isNuxt2 } from '@nuxt/kit'
 import defu from 'defu'
-
 import { name, version } from '../package.json'
 
 import logger from './logger'
@@ -29,12 +28,6 @@ export interface ModuleOptions {
 
 const CONFIG_KEY = 'yandexMetrika'
 
-declare module '@nuxt/schema' {
-  interface PublicRuntimeConfig {
-    [CONFIG_KEY]?: ModuleOptions
-  }
-}
-
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name,
@@ -45,12 +38,13 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
+    id: process.env.YANDEX_METRIKA_ID,
     metrikaUrl: 'https://mc.yandex.ru/metrika',
     accurateTrackBounce: true,
     childIframe: false,
     clickmap: true,
     defer: false,
-    useRuntimeConfig: false,
+    useRuntimeConfig: true,
     trackHash: false,
     trackLinks: true,
     type: 0,
@@ -72,20 +66,29 @@ export default defineNuxtModule<ModuleOptions>({
     options.metrikaUrl = (options.useCDN ? 'https://cdn.jsdelivr.net/npm/yandex-metrica-watch' : options.metrikaUrl) + '/tag.js'
 
     if (options.useRuntimeConfig) {
-      nuxt.options.publicRuntimeConfig[CONFIG_KEY] = defu(nuxt.options.publicRuntimeConfig[CONFIG_KEY], options)
+      nuxt.options.runtimeConfig.public[CONFIG_KEY] = defu(nuxt.options.runtimeConfig.public[CONFIG_KEY], options)
     }
 
     addTemplate({
       filename: 'yandex-metrika.options.mjs',
       getContents: () => {
         return `export default () => Promise.resolve(${JSON.stringify(
-          options.useRuntimeConfig ? nuxt.options.publicRuntimeConfig[CONFIG_KEY] : options || {}
+          options.useRuntimeConfig ? nuxt.options.runtimeConfig.public[CONFIG_KEY] : options || {}
         )})`
       }
     })
 
     const getMeta = () => {
-      return isNuxt2() ? nuxt.options.head : nuxt.options.meta || []
+      if (isNuxt2()) {
+        // @ts-ignore
+        nuxt.options.head = nuxt.options.head || {}
+        // @ts-ignore
+        nuxt.options.head.link = nuxt.options.head.link || []
+      } else {
+        nuxt.options.app.head.link = nuxt.options.app.head.link || []
+      }
+
+      return isNuxt2() ? nuxt.options.head : nuxt.options.app.head
     }
 
     // Script preload
