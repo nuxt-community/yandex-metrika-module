@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from 'nuxt3'
 import YandexMetrikaModule from '..'
 
 export default defineNuxtConfig({
@@ -6,6 +5,7 @@ export default defineNuxtConfig({
     YandexMetrikaModule
   ],
   yandexMetrika: {
-    id: 'XXXXXX'
+    id: 'XXXXXX',
+    useRuntimeConfig: true
   }
 })
