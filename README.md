@@ -3,7 +3,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 
-> Add Yandex Metrika to your nuxt.js application.
+> Add Yandex Metrika to your Nuxt application.
 
 This plugin automatically sends first page and route change events to Yandex Metrika.
 
@@ -12,7 +12,7 @@ You can set environment variable `NODE_ENV` to `production` for testing in dev m
 
 ## Setup
 
-- Add `@nuxtjs/yandex-metrika` dependency using yarn or npm to your project
+- Add `@nuxtjs/yandex-metrika` dependency to your project
 - Add `@nuxtjs/yandex-metrika` to `modules` section of `nuxt.config.js`
 
 ```js
@@ -25,7 +25,7 @@ You can set environment variable `NODE_ENV` to `production` for testing in dev m
 
 You can pass options directly in module declaration:
 
-```js
+```ts
 {
   modules: [
     [
@@ -45,7 +45,7 @@ You can pass options directly in module declaration:
 
 Or you can specify `yandexMetrika` key:
 
-```js
+```ts
 {
   modules: ['@nuxtjs/yandex-metrika'],
   yandexMetrika: {
@@ -94,13 +94,13 @@ For more information:
 ## Development
 
 - Clone this repository
-- Install dependencies using `yarn install` or `npm install`
-- Run `yarn dev:setup` to generate type stubs.
-- Use `yarn dev` to start [playground](./playground) in development mode.
+- Install dependencies using `pnpm install`
+- Run `pnpm dev:prepare` to generate type stubs.
+- Use `pnpm dev` to start [playground](./playground) in development mode.
 
 ## License
 
-[MIT License](./LICENSE) - Copyright (c) Nuxt Community
+[MIT License](./LICENSE)
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/yandex-metrika/latest.svg?style=flat-square
