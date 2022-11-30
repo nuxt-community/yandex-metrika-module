@@ -1,11 +1,53 @@
 {
   "name": "@nuxtjs/yandex-metrika",
-  "version": "1.4.0",
+  "version": "2.0.0",
+  "description": "Add Yandex Metrika to your Nuxt application.",
   "license": "MIT",
-  "repository": "https://github.com/nuxt/modules",
-  "homepage": "https://github.com/nuxt/modules/tree/master/packages/yandex-metrika",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxt-community/yandex-metrika-module.git"
+  },
+  "homepage": "nuxt-community/yandex-metrika-module",
+  "bugs": {
+    "url": "https://github.com/nuxt-community/yandex-metrika-module/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "type": "module",
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi dev playground",
+    "dev:prepare": "pnpm build --stub && nuxi prepare playground",
+    "prepack": "pnpm build",
+    "lint": "eslint --ext .js,.ts,.vue ."
+  },
   "publishConfig": {
     "access": "public"
   },
-  "main": "index.js"
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0",
+    "defu": "^6.1.1",
+    "pathe": "^1.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "@release-it/conventional-changelog": "^4.3.0",
+    "@types/node": "latest",
+    "eslint": "latest",
+    "nuxt": "^3.0.0",
+    "release-it": "^14.14.3"
+  },
+  "packageManager": "pnpm@7.17.1"
 }
