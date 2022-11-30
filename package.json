@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/yandex-metrika",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "Add Yandex Metrika to your Nuxt application.",
   "license": "MIT",
   "repository": {
@@ -37,16 +37,17 @@
     "access": "public"
   },
   "dependencies": {
-    "@nuxt/kit": "npm:@nuxt/kit-edge@latest"
+    "@nuxt/kit": "^3.0.0",
+    "pathe": "^1.0.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@release-it/conventional-changelog": "^4.2.0",
+    "@release-it/conventional-changelog": "^4.3.0",
     "@types/node": "latest",
     "eslint": "latest",
-    "nuxt3": "latest",
-    "release-it": "^14.12.5"
+    "nuxt": "^3.0.0",
+    "release-it": "^14.14.3"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.4"
 }
