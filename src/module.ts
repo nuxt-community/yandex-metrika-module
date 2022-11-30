@@ -1,10 +1,7 @@
 import { fileURLToPath } from 'url'
 import { resolve } from 'pathe'
-import { defineNuxtModule, addPlugin, addTemplate, isNuxt2 } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, addTemplate, isNuxt2, useLogger } from '@nuxt/kit'
 import defu from 'defu'
-import { name, version } from '../package.json'
-
-import logger from './logger'
 
 export interface ModuleOptions {
   id?: string,
@@ -26,12 +23,12 @@ export interface ModuleOptions {
   triggerEvent?: boolean,
 }
 
+const logger = useLogger('nuxt:yandex-metrika')
 const CONFIG_KEY = 'yandexMetrika'
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name,
-    version,
+    name: '@nuxtjs/yandex-metrika',
     configKey: CONFIG_KEY,
     compatibility: {
       bridge: true
@@ -80,9 +77,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     const getMeta = () => {
       if (isNuxt2()) {
-        // @ts-ignore
         nuxt.options.head = nuxt.options.head || {}
-        // @ts-ignore
         nuxt.options.head.link = nuxt.options.head.link || []
       } else {
         nuxt.options.app.head.link = nuxt.options.app.head.link || []
