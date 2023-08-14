@@ -2,12 +2,10 @@
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/yandex-metrika.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/yandex-metrika)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/yandex-metrika/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/yandex-metrika)
 
-> Add Yandex Metrika to your nuxt.js application.
+> [!WARNING]  
+> Yandex Metrika is known for Security and Privacy issues. Please [Read More Here](https://en.wikipedia.org/wiki/Yandex#Security).
 
-This plugins automatically sends first page and route change events to yandex metrika.
-
-**Note:** yandex metrika is not enabled in dev mode.
-You can set environment variable `NODE_ENV` to `production` for testing in dev mode.
+This plugin automatically sends first page and route change events to yandex metrika.
 
 ## Setup
 
