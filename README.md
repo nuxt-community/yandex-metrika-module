@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository is archived. `@nuxtjs/yandex-metrika` was built for Nuxt 2, which reached end of life on June 30, 2024.
+
 # Yandex Metrika
 [![npm](https://img.shields.io/npm/dt/@nuxtjs/yandex-metrika.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/yandex-metrika)
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/yandex-metrika/latest.svg?style=flat-square)](https://www.npmjs.com/package/@nuxtjs/yandex-metrika)
